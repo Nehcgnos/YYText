@@ -655,7 +655,11 @@ static dispatch_queue_t YYLabelGetReleaseQueue() {
             case NSLineBreakByTruncatingHead:
             case NSLineBreakByTruncatingTail:
             case NSLineBreakByTruncatingMiddle: {
-                _innerText.yy_lineBreakMode = NSLineBreakByWordWrapping;
+                if (_isInnerTextWrappingByChar) {
+                    _innerText.yy_lineBreakMode = NSLineBreakByCharWrapping;
+                } else {
+                    _innerText.yy_lineBreakMode = NSLineBreakByWordWrapping;
+                }
             } break;
             default: break;
         }
@@ -858,7 +862,11 @@ static dispatch_queue_t YYLabelGetReleaseQueue() {
             case NSLineBreakByTruncatingHead:
             case NSLineBreakByTruncatingTail:
             case NSLineBreakByTruncatingMiddle: {
-                _innerText.yy_lineBreakMode = NSLineBreakByWordWrapping;
+                if (_isInnerTextWrappingByChar) {
+                    _innerText.yy_lineBreakMode = NSLineBreakByCharWrapping;
+                } else {
+                    _innerText.yy_lineBreakMode = NSLineBreakByWordWrapping;
+                }
             } break;
             default: break;
         }

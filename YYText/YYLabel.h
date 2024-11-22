@@ -117,6 +117,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic) NSLineBreakMode lineBreakMode;
 
+@property (nonatomic, assign) BOOL isInnerTextWrappingByChar;
+
 /**
  The truncation token string used when text is truncated. Default is nil.
  When the value is nil, the label use "…" as default truncation token.
